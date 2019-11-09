@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Diagram</title>
+<link rel="stylesheet" href="style.css">
+      <script src="script.js"></script>
+</head>
+
+  <body>
+    <div class="main">
+      <input class="slider" type="range" min="0" max="300" id="protein">
+      <input class="slider" type="range" min="0" max="300" id="carb">
+      <input class="slider" type="range" min="0" max="300" id="fat">
+      <!-- <span id="percents">Percents: </span>  -->
+      <canvas id="chart" width="300" height="300" style="border: 1px solid black"> </canvas>
+      <script> 
+        var updatePercents = function() {
+          var percents = getPercents();
+          //console.log("percents: " + percents);
+          //var str = "Percents: ";
+          //str += percents.map(x => (x*100).toFixed(2)).join(", ");
+          //var elem = document.getElementById("percents");
+          //elem.innerHTML = str;
+          drawPercents(percents);
+        }
+        var sliders = document.getElementsByClassName("slider");
+        myForEach(sliders, function (slider) {
+            slider.oninput = updatePercents;
+        });
+        updatePercents();
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+
+body {
+  background-color: rgb(0, 81, 148);
+}
+
+.main {
+  max-width: 500px;
+}
+
+.slider {
+  width: 300px;
+  float: left;
+}
+
+.char {
+  background-color: white;
+}
