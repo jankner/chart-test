@@ -32,6 +32,8 @@ var drawPercents = function(percents)
   var cx = 150;
   var cy = 150;
 
+  ctx.clearRect(0, 0, 300, 300);
+
   for (var i = 0; i < percents.length; i++)
   {
     ctx.fillStyle = colors[i%colors.length];
