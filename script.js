@@ -5,8 +5,11 @@ var myForEach = function(collection, f) {
   }
 }
 
-//var weights = 
-//  { "fat": 
+var weights = 
+  { "fat": 29
+  , "carb": 17
+  , "protein": 17
+  }
 
 var getPercents = function()
 {
@@ -14,8 +17,9 @@ var getPercents = function()
   var sliders = document.getElementsByClassName("slider");
   var sum = 0.0;
   myForEach(sliders, function(slider) {
-    values.push(slider.value);
-    sum += parseFloat(slider.value);
+    var value = slider.value * weights[slider.id];
+    values.push(value);
+    sum += parseFloat(value);
   });
 
   return values.map(x => x / sum);
