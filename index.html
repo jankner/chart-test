@@ -9,9 +9,15 @@
 
   <body>
     <div class="main">
+      <div class="sliderLabel" style="color: #4444ff">Protein</div>
       <input class="slider" type="range" min="0" max="300" id="protein">
+      <div id="proteinValue" class="sliderValue">g</div>
+      <div class="sliderLabel" style="color: #00ff00">Carbs</div>
       <input class="slider" type="range" min="0" max="300" id="carb">
+      <div id="carbValue" class="sliderValue">g</div>
+      <div class="sliderLabel" style="color: #ff0000">Fat</div>
       <input class="slider" type="range" min="0" max="300" id="fat">
+      <div id="fatValue" class="sliderValue">g</div>
       <!-- <span id="percents">Percents: </span>  -->
       <canvas id="chart" width="300" height="300" style="border: 1px solid black"> </canvas>
       <script> 
@@ -22,6 +28,15 @@
           //str += percents.map(x => (x*100).toFixed(2)).join(", ");
           //var elem = document.getElementById("percents");
           //elem.innerHTML = str;
+          var protein = document.getElementById("protein");
+          var pv = document.getElementById("proteinValue");
+          pv.innerHTML = protein.value + "g";
+          var carb = document.getElementById("carb");
+          var cv = document.getElementById("carbValue");
+          cv.innerHTML = carb.value + "g";
+          var fat = document.getElementById("fat");
+          var fv = document.getElementById("fatValue");
+          fv.innerHTML = fat.value + "g";
           drawPercents(percents);
         }
         var sliders = document.getElementsByClassName("slider");
